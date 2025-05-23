@@ -1,0 +1,298 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffb6c1; /* Rosa claro */
+    min-height: 100vh; /* Cubre toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Oculta el desbordamiento de corazones */
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh); /* Caída hasta el final de la pantalla */
+    }
+}
+
+
+
+
+
+/* Contador de tiempo (arriba y centrado) */
+.counter-container {
+    position: fixed; /* Fijo en la pantalla */
+    top: 20px; /* Distancia desde arriba */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado horizontal */
+    text-align: center;
+    z-index: 1000; /* Asegura que esté sobre los corazones */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-boxes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: rgba(255, 182, 193, 0.8); /* Fondo rosa semi-transparente */
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 70px;
+}
+
+.box span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d23369; /* Color rosa oscuro */
+}
+
+
+
+
+
+
+
+
+/* Estilos Polaroid */
+.polaroid-container {
+    position: fixed;
+    top: 120px; /* ← Distancia desde el borde superior de la pantalla */
+    left: 150px;
+    z-index: 1000;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: rotate(-5deg);
+    position: relative;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: none;
+}
+
+.polaroid img.active {
+    display: block;
+}
+
+.polaroid-caption {
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    margin-top: 10px;
+}
+
+.nav-btn {
+    position: absolute;
+    background: rgba(255, 182, 193, 0.7);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.polaroid-container:hover .nav-btn {
+    opacity: 1;
+}
+
+.prev {
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+}
+
+.next {
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+}
+
+.polaroid-container.right-side {
+    top: 120px; /* Más abajo que el primero */
+    left: auto;
+    right: 150px;
+    transform: rotate(10deg);
+}
+
+/* productor */
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #e582cd;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    padding: 0;
+}
+
+
+.cover-image {
+    position: relative;
+    display: inline-block;
+}
+
+.cover-image:hover .arrow-button {
+    opacity: 1;
+}
+
+
+.spotify-style-player {
+    position: fixed;
+    top: 510px;
+    left: 50px;
+    
+}
+
+.cover-image img {
+    width: 285px;
+    height: 285px;
+    border-radius: 2px;
+    object-fit: cover;
+    margin-right: 5px;
+}
+.song-title,
+.artist-name {
+    display: none;
+}
+
+/* Cuadro */
+.cuadro-texto {
+    width: 280px;
+    height: 350px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: fixed;
+    top: 470px; /* Ubicación vertical (ajústalo si hace falta) */
+    right: 50px; /* Justo debajo del segundo polaroid */
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.cuadro-titulo {
+    background: #f574ce;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.cuadro-contenido {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Scroll personalizado */
+.cuadro-contenido::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cuadro-contenido::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+}
+
+
+
+
+.corazon-palpitante {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* ← aquí puedes agrandar */
+    height: 400px;
+    background-color: #ff4d6d;
+    clip-path: polygon(
+        50% 15%,
+        61% 5%,
+        75% 0%,
+        87% 5%,
+        100% 20%,
+        100% 35%,
+        92% 50%,
+        50% 100%,
+        8% 50%,
+        0% 35%,
+        0% 20%,
+        13% 5%,
+        25% 0%,
+        39% 5%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: latido 1.4s infinite;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.corazon-contenido {
+    color: white;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 50px; /* Se agranda texto corazon */
+    text-align: center;
+    pointer-events: none;
+}
+
+/* Animación de latido */
+@keyframes latido {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+
+
+
+
+
+

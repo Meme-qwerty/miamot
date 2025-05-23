@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi vidita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Contador de tiempo (arriba y centrado) -->
+    <div class="counter-container">
+        <h1>Nuestro Tiempo Juntos❤️</h1>
+        <div class="time-boxes">
+            <div class="box"><span id="years">0</span><br>Años</div>
+            <div class="box"><span id="months">0</span><br>Meses</div>
+            <div class="box"><span id="days">0</span><br>Días</div>
+            <div class="box"><span id="hours">0</span><br>Horas</div>
+            <div class="box"><span id="minutes">0</span><br>Minutos</div>
+            <div class="box"><span id="seconds">0</span><br>Segundos</div>
+        </div>
+    </div>
+
+    <!-- Polaroid izquierda -->
+<div class="polaroid-container">
+  <div class="polaroid" id="polaroid-left">
+    <img src="images/foto1.jpg" alt="Nuestra foto 1" class="active">
+    <img src="images/foto2.jpg" alt="Nuestra foto 2">
+    <img src="images/foto3.jpg" alt="Nuestra foto 3">
+    <div class="polaroid-caption">Momentos de amot❤️</div>
+  </div>
+  <button class="nav-btn prev" onclick="prevPhoto('left')">❮</button>
+  <button class="nav-btn next" onclick="nextPhoto('left')">❯</button>
+</div>
+
+<!-- Reproductor tipo Spotify con selector -->
+<div class="spotify-style-player">
+  <div class="cover-image">
+    <img id="cover" src="images/portada1.jpg" alt="Portada canción">
+    <!-- Flecha sobre la imagen -->
+    <button id="nextButton" class="arrow-button">⇨</button>
+
+  </div>
+  <div class="song-info">
+    <div id="title" class="song-title"></div>
+    <div id="artist" class="artist-name"></div>
+    <audio id="audioPlayer" controls>
+      <source id="audioSource" src="audio/cancion1.mp3" type="audio/mpeg">
+      
+    </audio>
+    
+  </div>
+</div>
+
+ 
+<!-- Polaroid derecha -->
+<div class="polaroid-container right-side">
+  <div class="polaroid" id="polaroid-right">
+    <img src="images/foto4.jpg" alt="Nuestra foto 4" class="active">
+    <img src="images/foto5.jpg" alt="Nuestra foto 5">
+    <img src="images/foto6.jpg" alt="Nuestra foto 6">
+    <img src="images/foto7.jpg" alt="Nuestra foto 7">
+    <div class="polaroid-caption">Momentos de risa :)</div>
+  </div>
+  <button class="nav-btn prev" onclick="prevPhoto('right')">❮</button>
+  <button class="nav-btn next" onclick="nextPhoto('right')">❯</button>
+</div>
+
+
+<!-- Cuadro con título y scroll -->
+<div class="cuadro-texto">
+  <div class="cuadro-titulo">🌻Paulina Alejandra🌻</div>
+  <div class="cuadro-contenido" contenteditable="true">
+    Ya son 9 meses junto a ti💖, junto al amor de mi vida, junto a la persona que me hace crecer y mejor cada día como persona, eres realmente mi felicidad y mi alegría, lo eres todo para mi y eres la persona más importante en mi vida y que en un futuro serás mi esposa, mi mujer, mi reina, ahora eres mi princesita bella, no hay palabras que describan el amor y cariño que siento por ti y que crece y crece cada día, cada hora y cada minuto que pasa del día💗. Quiero que estemos juntos hasta la eternidad y en todos los universos que existan y en cada uno de ellos hacerte la mujer más feliz de todo el universo, te amo con toda mi alma y todo mi corazón, te pertenezco, soy tuyo y tu eres mia, gracias por ser tan cariñosa, tan chistosa, amorosa y comprensiva, se que a veces nos enojamos y tenemos nuestras diferencias pero siempre nos logramos arreglar y darnos muchos muchos besitos, eres mi meta, por ti soy capaz de mover montañas, por ti hago de todo, 💗💞TE AMO HASTA EL INFINITO Y MÁS ALLÁ💞💗
+
+  </div>
+</div>
+
+
+
+
+
+    <!-- Lluvia de corazones (fondo) -->
+    <div id="container"></div>
+    
+    <script src="script.js"></script>
+
+<!-- Corazón palpitando con nombre -->
+<div class="corazon-palpitante">
+  <div class="corazon-contenido">Mi corazon late por ti🥰</div>
+</div>
+
+
+   
+</body>
+</html>
